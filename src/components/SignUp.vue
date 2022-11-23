@@ -22,12 +22,12 @@ export default {
 		return {
 			rules: [
 				{ message:"8 characters minimum.", regex:/.{8,}/ },
-                { message:"15 characters maximum.", regex:/^.{0,15}$/ },
+                		{ message:"15 characters maximum.", regex:/^.{0,15}$/ },
 				{ message:"One uppercase letter required.",  regex:/[A-Z]+/ },
-                { message:"Two lowercase letters required.", regex:/[a-z].{1,}/ },
+                		{ message:"Two lowercase letters required.", regex:/[a-z].{1,}/ },
 				{ message:"One number required.", regex:/[0-9]+/ },
-                { message:"Password should start with an uppercase letter.", regex:/^[A-Z]/},
-                { message:"Password should include the character '_'.", regex:/[_]/}
+                		{ message:"Password should start with an uppercase letter.", regex:/^[A-Z]/},
+               		 	{ message:"Password should include the character '_'.", regex:/[_]/}
 			],
 			password:'',
 			submitted:false
@@ -55,11 +55,11 @@ export default {
 #app {
     width: 400px;
     margin: 0 auto;
-    background-color: #2c3e50;
+    background-color: #d3d3d3;
     padding: 30px;
     margin-top: 100px;
     border-radius: 20px;
-    color: white;
+    color: #2c3e50;
 }
 input {
     border: none;
@@ -77,7 +77,7 @@ button {
     padding: 10px 20px;
     margin-top: 10px;
     border: none;
-    color: white;
+    color: #2c3e50;
     border-radius: 20px;
 }
 </style>
