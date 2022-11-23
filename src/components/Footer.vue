@@ -10,7 +10,7 @@
 <style scoped>
     footer {
 	display: flex;
-	background-color:	#D3D3D3;
+	background-color:	#bdbdbd;
 	border-radius: 10px;
 	margin: 0;
 	padding: 1em;
