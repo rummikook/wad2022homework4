@@ -3,7 +3,7 @@
         <h2>Password</h2>
         <input type="email" placeholder="Email">
         <div class="password">
-            <input :class='{valid:passwordValidation.valid}' v-model="password" placeholder="Password">
+            <input type="password" :class='{valid:passwordValidation.valid}' v-model="password" placeholder="Password">
         </div>
         <button>Login</button>
         <transition name="hint" appear>
