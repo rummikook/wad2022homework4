@@ -1,43 +1,91 @@
 <template>
-  <div class="posts">
-    <!--väga algne-->
-    <li v-for="post in posts" :key="post.id">
-      {{post.authorName}}
-      {{post.createTime}}
-      {{post.body}}
-      {{post.picture}}
-    </li>
-  </div>
+  <main>
+    <button button v-on:click="resetLikes()">Reset Likes</button>
+    <article v-for="post in postList" :key="post.id">
+      <ul className="articleHeader">
+        <li><img src="@/assets/user.png" width="40" height="40" /></li>
+        <li>{{post.createTime.substring(11,16) + " " + post.createTime.substring(0, 10)}}</li>
+      </ul>
+      <div className="postText">{{post.body}}</div>
+      <img v-if="post.picture!=''" :src="require('@/assets/' + post.picture)" />
+      <div className="likes">Likes: {{post.likes}}</div>
+      <button className="likeButton" button v-on:click="addLike(post.id)"><img src="@/assets/like.png" width="40" height="40"/></button>
+    </article>
+  </main>
 </template>
 
 <script>
-// prg vale, peab olema store/index.js state'is
-import postsData from "@/assets/posts.json";
-
 export default {
-  name: 'Posts',
-  data() {
-    return {
-      posts: postsData,
-    };
+  name: "Posts",
+  data: function() {return {}},
+  computed: {
+    postList() {
+    return this.$store.state.postList
+    }
   },
-};
+  methods: {
+    addLike: function(postId) {
+      this.$store.commit("addLike", postId)
+    },
+    resetLikes: function() {
+      this.$store.commit("resetLikes")
+    }
+  }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+
+article {
+	display: flex;
+	background-color:	#D3D3D3;
+	border-radius: 10px;
+	width: 50%;
+	padding: 1em;
+	flex-direction: column;
+	margin: 1em;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+
+.articleHeader {
+	justify-content: space-between;
+  margin: 2px;
+	padding: 2px;
+	list-style: none;
+	display: flex;
+	flex-direction: row;
 }
-a {
-  color: #42b983;
+
+ul + div {
+  font-weight: bold;
+}
+
+.postText {
+  text-align: left;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.likes {
+  text-align: left;
+}
+
+.likeButton {
+  width: 4em;
+  margin-top: 1em;
+}
+
+@media (max-width: 800px) {
+	article {
+		width: 95%;
+	}
+	footer {
+		display: none;
+	}
 }
 </style>

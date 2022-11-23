@@ -9,20 +9,18 @@
 
 <style scoped>
     footer {
-        display: flex; 
-        justify-content: center;
-        background-color:	#D3D3D3;
-        border-radius: 10px;
-        margin: 0;
-        padding: 1em;
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        position: absolute;
+	display: flex;
+	background-color:	#D3D3D3;
+	border-radius: 10px;
+	margin: 0;
+	padding: 1em;
+	position: fixed;
+	bottom: 0;
+	right: 0;
     }
-
-    footer p{
-        text-align: center;
+    @media (max-width: 800px) {
+        footer {
+            display: none;
+        }
     }
 </style>
