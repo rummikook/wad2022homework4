@@ -10,5 +10,5 @@ The project should be visible in
 
 To create a JSON server,  
 run `npm install json-server` in a new terminal (also in repo folder)  
-and then `npx json-server --watch Data/posts.json`  
+and then `npx json-server --watch src/assets/posts.json`  
 The posts should be visible in `http://localhost:3000/posts`
