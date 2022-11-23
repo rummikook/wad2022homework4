@@ -11,6 +11,9 @@
 nav {
     text-align: left;
     padding: 30px;
+    background-color:	#bdbdbd;
+    border-radius: 10px;
+    margin-top: 0;
 }
 
 nav a {
