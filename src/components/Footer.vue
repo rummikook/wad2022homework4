@@ -10,6 +10,7 @@
 <style scoped>
     footer {
 	display: flex;
+    justify-content: center;
 	background-color:	#D3D3D3;
 	border-radius: 10px;
 	margin: 0;
@@ -17,6 +18,7 @@
 	position: fixed;
 	bottom: 0;
 	right: 0;
+    left: 0;
     }
     @media (max-width: 800px) {
         footer {
