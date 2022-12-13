@@ -1,5 +1,5 @@
-# wad2022homework3
-Our WAD2022 Homework3
+# wad2022homework4
+Our WAD2022 Homework4
 
 To see our project,  
 run `npm i` in the repo folder if needed  
